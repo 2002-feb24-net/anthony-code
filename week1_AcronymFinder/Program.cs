@@ -21,7 +21,7 @@ namespace week1_AcronymFinder
             {
                 string strA = arr[i];
                 string strB = strA.Substring(0, 1);
-                newArr[i] = strB;
+                newArr[i] = strB.ToUpper();
             }
             return newArr;
         }
@@ -29,7 +29,7 @@ namespace week1_AcronymFinder
         // prints new Acronym to console
         static void printStuff(string[] str)
         {
-            System.Console.WriteLine("Your Acronym to your Phrase is : ");
+            System.Console.Write("\nYour Acronym to your Phrase is : ");
             for(int x = 0; x < str.Length; x++)
             {
                 System.Console.Write(str[x]);
