@@ -33,28 +33,34 @@ namespace TheMatrices
                 userProvidedArray[c] = num;
                 Console.Clear();
             }
+            System.Console.WriteLine("GetUserData completed");
             return userProvidedArray;
         }
 
         public int[,] moveDataToMatrix(int[] userData)
         {
-            
             int[,] matrix = new int[2, 2]
             {
                 {userData[0], userData[1]},
-                {userData[3], userData[4]},
+                {userData[2], userData[3]},
             };
+            System.Console.WriteLine("moveDataToMatrix completed");
             return matrix;
         }
 
         public void printData(int[,] newMatrix)
         {
-            System.Console.WriteLine("I havent figured out how to print it yet.");
+            foreach(int num in newMatrix)
+            {
+                System.Console.WriteLine(num);
+            }
+            //System.Console.WriteLine($"");
         }
 
         public void createMatrix()
         {
             int[] userData = getUserData();
+            System.Console.WriteLine("NEXT METHOD");
             int[,] newMatrix = moveDataToMatrix(userData);
             printData(newMatrix);
         }
