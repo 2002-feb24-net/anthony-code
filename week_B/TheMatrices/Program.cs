@@ -12,6 +12,8 @@ namespace TheMatrices
     {
         static void Main(string[] args)
         {
+            Matrix myMatrix = new Matrix();
+            myMatrix.createMatrix();
             
         }
     }
