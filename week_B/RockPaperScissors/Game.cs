@@ -1,3 +1,10 @@
+/*
+Author: Anthony Harrington
+Date: 3/3/2020
+Program: Rock/Paper/Scissors Game
+*/
+
+
 using System;
 using System.Collections.Generic;
 
@@ -5,10 +12,11 @@ namespace RockPaperScissors
 {
     public class RockPaperScissorsGame
     {
+
+        // Class Fields
         int wins = 0;
         int loss = 0;
         int ties = 0;
-
         List<string> roundResults = new List<string>();
         int [] score = new int[3];
 
@@ -17,7 +25,6 @@ namespace RockPaperScissors
         {
             System.Console.WriteLine("Please enter your selection..\n1: Rock\n2: Paper\n3: Scissors");
             int userInput = Int32.Parse(Console.ReadLine());
-            //System.Console.WriteLine($"Player Selection {userInput}");
             Console. Clear();
             return userInput;
         }
@@ -27,7 +34,6 @@ namespace RockPaperScissors
         {
             Random rnd = new Random();
             int computerGeneratedSelection = rnd.Next(1, 4);
-            //System.Console.WriteLine($"Computer Selection {computerGeneratedSelection}");
             return computerGeneratedSelection;
         }
 
@@ -90,6 +96,7 @@ namespace RockPaperScissors
             }
         }
 
+        // Counts the score up and puts data in an array
         public int[] CountScore()
         {
             foreach (string data in roundResults)
@@ -110,7 +117,7 @@ namespace RockPaperScissors
             return score;
         }
 
-        // Prints game summary
+        // Prints game summary to console
         public void PrintRoundSummary()
         {
             Console. Clear();
