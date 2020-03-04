@@ -12,18 +12,28 @@ namespace TheMatrices
     {
         //fields
         int[,] matrix = new int[2, 2];
+        int[,] matrix_1;
 
+
+        // get matrix dimensions
+        public int[,] SetMatrix()
+        {
+            System.Console.WriteLine("How big do you want the matrix, your choice will set the columns and rows | Provide number 2 thru 10");
+            int number = Int32.Parse(Console.ReadLine());
+            int[,] newMatrix = new int[number,number];
+            System.Console.WriteLine(newMatrix.Length);
+            return newMatrix;
+        }
         // gets users numbers data
-        public int[] getUserData()
+        public int[] getUserData(int[,] userMatrix)
         {
             int[] userProvidedArray = new int[4];
-            System.Console.WriteLine("Please input 4 different numbers between 0 and 9");
+            System.Console.WriteLine("Please input numbers between 0 and 9");
             for(int c = 0; c < userProvidedArray.Length; c++)
             {
                 System.Console.WriteLine("Enter Number Here: ");
-                string num1 = Console.ReadLine();
-                int num = int.Parse(num1);
-                userProvidedArray[c] = num;
+                int num1 = Int32.Parse(Console.ReadLine());
+                userProvidedArray[c] = num1;
                 Console.Clear();
             }
             return userProvidedArray;
@@ -53,15 +63,18 @@ namespace TheMatrices
             System.Console.WriteLine($"|{c} {d}|");
         }
 
+        // Add matrix together
         public void Add(int[,] first, int[,] second)
         {
-            
+            System.Console.WriteLine("This currently does nothing");
         }
 
         // creates matrix
         public void createMatrix()
         {
-            int[] userData = getUserData();
+            
+            int[,] userMatrix = SetMatrix();
+            int[] userData = getUserData(userMatrix);
             int[,] newMatrix = moveDataToMatrix(userData);
             printData(newMatrix);
         }
