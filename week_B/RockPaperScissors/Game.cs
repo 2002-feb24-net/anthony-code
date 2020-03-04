@@ -76,17 +76,17 @@ namespace RockPaperScissors
             if (winner == "P")
             {
                 roundResults.Add("win");
-                System.Console.WriteLine("Player Wins");
+                System.Console.WriteLine("Player Wins\n");
             }
             if (winner == "C")
             {
                 roundResults.Add("loss");
-                System.Console.WriteLine("Computer Wins");
+                System.Console.WriteLine("Computer Wins\n");
             }
             if (winner == "N")
             {
                 roundResults.Add("tie");
-                System.Console.WriteLine("Players Tied");
+                System.Console.WriteLine("Players Tied\n");
             }
         }
 
@@ -125,10 +125,14 @@ namespace RockPaperScissors
         // Starts the round for the game
         public void PlayRound()
         {
-            int userSelection = getUserSelection();
-            int computerSelection = getComputersSelection();
-            string winner = ComparePlayersInput(userSelection, computerSelection);
-            KeepScore(winner);
+            System.Console.WriteLine("One game consists of 5 rounds.\nAfter each round you will be asked to play again.\nIf you choose yes the score will continue to the next game.\n");
+            for(int c = 0; c < 5; c++)
+            {
+                int userSelection = getUserSelection();
+                int computerSelection = getComputersSelection();
+                string winner = ComparePlayersInput(userSelection, computerSelection);
+                KeepScore(winner);
+            }
         }
     }
 }
