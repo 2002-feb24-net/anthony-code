@@ -10,17 +10,10 @@ namespace TheMatrices
 {
     class Matrix
     {
-        //fields = how will we store the data of this matrix
-        //int number;
+        //fields
         int[,] matrix = new int[2, 2];
-        //int[] userProvidedArray = new int[4];
 
-
-        /* Methods
-        1. some way to fill the data
-        2. some common matrix operations (matrix addition, matrix negation, multiplication, transpose)
-        */
-
+        // gets users numbers data
         public int[] getUserData()
         {
             int[] userProvidedArray = new int[4];
@@ -33,10 +26,10 @@ namespace TheMatrices
                 userProvidedArray[c] = num;
                 Console.Clear();
             }
-            System.Console.WriteLine("GetUserData completed");
             return userProvidedArray;
         }
 
+        // moves user data to matrix fields
         public int[,] moveDataToMatrix(int[] userData)
         {
             int[,] matrix = new int[2, 2]
@@ -48,19 +41,27 @@ namespace TheMatrices
             return matrix;
         }
 
+        //prints matrix after conversion
         public void printData(int[,] newMatrix)
         {
-            foreach(int num in newMatrix)
-            {
-                System.Console.WriteLine(num);
-            }
-            //System.Console.WriteLine($"");
+            int a = newMatrix[0,0];
+            int b = newMatrix[0,1];
+            int c = newMatrix[1,0];
+            int d = newMatrix[1,1];
+
+            System.Console.WriteLine($"|{a} {b}|");
+            System.Console.WriteLine($"|{c} {d}|");
         }
 
+        public void Add(int[,] first, int[,] second)
+        {
+            
+        }
+
+        // creates matrix
         public void createMatrix()
         {
             int[] userData = getUserData();
-            System.Console.WriteLine("NEXT METHOD");
             int[,] newMatrix = moveDataToMatrix(userData);
             printData(newMatrix);
         }
