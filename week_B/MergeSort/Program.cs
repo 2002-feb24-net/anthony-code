@@ -1,5 +1,5 @@
 ﻿/* 
-Author: Anthony Harrington
+Author: Anthony Harrington - by insturctor
 Date: 03/05/2020
 Project: MergeSort Algorithm (8, 5, 7, 1, 6, 3, 4, 2)
 */
@@ -76,8 +76,9 @@ namespace MergeSort
                 int[] result = new int[length];
                 for(int i = 0; i < length; i++)
                 {
-                    
+                    result[i] = array[start + i];
                 }
+                return result;
             }
 
             
