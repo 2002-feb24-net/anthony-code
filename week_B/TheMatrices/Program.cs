@@ -13,9 +13,9 @@ namespace TheMatrices
         static void Main(string[] args)
         {
             Matrix myMatrix1 = new Matrix();
-            myMatrix1.createMatrix();
-            Matrix myMatrix2 = new Matrix();
-            myMatrix2.createMatrix();
+            //myMatrix1.createMatrix();
+            //Matrix myMatrix2 = new Matrix();
+            //myMatrix2.createMatrix();
             
         }
     }
