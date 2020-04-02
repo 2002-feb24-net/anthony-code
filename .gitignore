@@ -1,3 +1,5 @@
 bin/
 obj/
 SecretConfig.cs
+EfSecretFile.cs
+appsettings.json
